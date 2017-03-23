@@ -9,27 +9,32 @@ namespace Honeybee
     class Program
     {
         static string READ_SCRIPTS = "Icarus_scripts.txt";
+
+        static string[] _ReadLines = null;
         static List<Function> Functions;
 
         static void Main(string[] args)
         {
             Functions = ParseFunctions();
 
-            Console.WriteLine("Found functions: " + Functions.Count);
-
+            Console.WriteLine("Found functions: " + Functions.Count + "\n");
+            
             int found = 0;
 
             foreach (Function func in Functions)
             {
+
                 if (func.ToString().Contains("\"Login\", \"socket\""))
                 {
 
                     Console.WriteLine("Login handler found: " + func.Name);
+                    func.GetHeader();
                     found++;
                 }
+                
             }
 
-            Console.WriteLine("Functions found: " + found);
+            Console.WriteLine("\nFunctions found: " + found);
 
             Console.Read();
         }
@@ -73,17 +78,20 @@ namespace Honeybee
                     && (Line.Contains("():") || (Line.Contains("(k:")));
         }
 
-        static string[] ReadLines()
+        public static string[] ReadLines()
         {
-            string[] Lines = File.ReadAllLines(READ_SCRIPTS);
-            string[] FormattedLines = new string[Lines.Length];
-
-            for (int i = 0; i < Lines.Length; i++)
+            if (_ReadLines == null)
             {
-                FormattedLines[i] = Lines[i].Replace("    ", "");
+                string[] Lines = File.ReadAllLines(READ_SCRIPTS);
+                _ReadLines = new string[Lines.Length];
+
+                for (int i = 0; i < Lines.Length; i++)
+                {
+                    _ReadLines[i] = Lines[i].Replace("    ", "");
+                }
             }
 
-            return Lines;
+            return _ReadLines;
         }
     }
 }
