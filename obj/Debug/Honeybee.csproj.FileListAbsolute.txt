@@ -1,0 +1,6 @@
+c:\users\alex\documents\visual studio 2015\Projects\Honeybee\Honeybee\bin\Debug\Honeybee.exe.config
+c:\users\alex\documents\visual studio 2015\Projects\Honeybee\Honeybee\bin\Debug\Honeybee.exe
+c:\users\alex\documents\visual studio 2015\Projects\Honeybee\Honeybee\bin\Debug\Honeybee.pdb
+c:\users\alex\documents\visual studio 2015\Projects\Honeybee\Honeybee\obj\Debug\Honeybee.csprojResolveAssemblyReference.cache
+c:\users\alex\documents\visual studio 2015\Projects\Honeybee\Honeybee\obj\Debug\Honeybee.exe
+c:\users\alex\documents\visual studio 2015\Projects\Honeybee\Honeybee\obj\Debug\Honeybee.pdb
